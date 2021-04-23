@@ -7,10 +7,6 @@ using Microsoft.EntityFrameworkCore;
 
 namespace GradingSystem.Data
 {
-    public class Grading
-    {
-    }
-
     public class GradingContext : DbContext
     {
         public GradingContext (DbContextOptions<GradingContext> options)

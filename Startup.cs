@@ -25,9 +25,8 @@ namespace GradingSystem
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddDbContext<GradingContext>(options => options.UseSqlServer(Configuration.GetConnectionString("Default Connection")));
             services.AddControllersWithViews();
-            services.AddDbContext<GradingContext>(options =>
-            options.UseSqlServer(Configuration.GetConnectionString("GradingContext")));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -54,7 +53,7 @@ namespace GradingSystem
             {
                 endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{controller=Home}/{action=Index}/{id?}");
+                    pattern: "{controller=Students}/{action=Index}/{id?}");
             });
         }
     }

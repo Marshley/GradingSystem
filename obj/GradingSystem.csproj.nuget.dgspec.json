@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\MSi\\Desktop\\GradingSystem\\GradingSystem.csproj": {}
+    "C:\\Users\\MSi\\Desktop\\Web\\GradingSystem\\GradingSystem.csproj": {}
   },
   "projects": {
-    "C:\\Users\\MSi\\Desktop\\GradingSystem\\GradingSystem.csproj": {
+    "C:\\Users\\MSi\\Desktop\\Web\\GradingSystem\\GradingSystem.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\MSi\\Desktop\\GradingSystem\\GradingSystem.csproj",
+        "projectUniqueName": "C:\\Users\\MSi\\Desktop\\Web\\GradingSystem\\GradingSystem.csproj",
         "projectName": "GradingSystem",
-        "projectPath": "C:\\Users\\MSi\\Desktop\\GradingSystem\\GradingSystem.csproj",
+        "projectPath": "C:\\Users\\MSi\\Desktop\\Web\\GradingSystem\\GradingSystem.csproj",
         "packagesPath": "C:\\Users\\MSi\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\MSi\\Desktop\\GradingSystem\\obj\\",
+        "outputPath": "C:\\Users\\MSi\\Desktop\\Web\\GradingSystem\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\MSi\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -40,9 +40,19 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "dependencies": {
-            "entityframework": {
+            "Microsoft.EntityFrameworkCore": {
               "target": "Package",
-              "version": "[6.4.4, )"
+              "version": "[5.0.5, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[5.0.5, )"
+            },
+            "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
+              "target": "Package",
+              "version": "[5.0.2, )"
             },
             "microsoft.entityframeworkcore.sqlserver": {
               "target": "Package",
