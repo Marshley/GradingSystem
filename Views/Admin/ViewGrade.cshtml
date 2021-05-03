@@ -1,0 +1,64 @@
+﻿@model IEnumerable<GradingSystem.Models.Grade>
+
+@{
+    ViewData["Title"] = "ViewGrade";
+}
+
+<h1>View Grade</h1>
+
+@*<p>
+    <a asp-action="Create">Create New</a>
+</p>*@
+<p>
+    <a asp-action="AssignSubjectToStudent">Assign Subject to Student</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Score)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Student)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Subject)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Faculty)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+    @*@if (item.FacultyId != null && item.StudentId != null)
+    {*@
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Score)
+            </td>
+            <td>
+                @*@Html.DisplayFor(modelItem => item.StudentId)*@
+                @Html.DisplayFor(modelItem => item.Student.Firstname) 
+                @Html.DisplayFor(modelItem => item.Student.Lastname)
+            </td>
+            <td>
+                @*@Html.DisplayFor(modelItem => item.SubjectId)*@
+                @Html.DisplayFor(modelItem => item.Subject.SubjectName)
+            </td>
+            <td>
+                @*@Html.DisplayFor(modelItem => item.FacultyId)*@
+                @Html.DisplayFor(modelItem => item.Faculty.FirstName)
+                @Html.DisplayFor(modelItem => item.Faculty.LastName)
+            </td>
+            <td>
+                <a asp-action="AssignToFaculty" asp-route-id="@item.Id">Assign to Faculty</a> |
+                <a asp-action="Score" asp-route-id="@item.Id">Give Grade</a> |
+                <a asp-action="GradeDetails" asp-route-id="@item.Id">Details</a>
+            </td>
+        </tr>
+        @*}*@
+    }
+    </tbody>
+</table>

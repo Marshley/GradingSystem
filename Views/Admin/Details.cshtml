@@ -1,0 +1,45 @@
+﻿@model GradingSystem.Models.Student
+
+@{
+    ViewData["Title"] = "Details";
+}
+<script language="javascript">function printPreviewDiv(elementId) { var printContent = document.getElementById(elementId); var windowUrl = 'about:blank'; var uniqueName = new Date(); var windowName = 'Print' + uniqueName.getTime(); var printWindow = window.open(windowUrl, windowName, 'left=50000,top=50000,width=0,height=0'); printWindow.document.write(printContent.innerHTML); printWindow.document.close(); printWindow.focus(); printWindow.print(); printWindow.close(); }</script>
+
+ <h1>Details</h1>
+    <div id="Div1" Runat="server">
+        <div>
+            <h4>Student</h4>
+            <hr />
+            <dl class="row">
+                <dt class="col-sm-2"a>
+                    @Html.DisplayNameFor(model => model.Firstname)
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(model => model.Firstname)
+                </dd>
+                <dt class="col-sm-2">
+                    @Html.DisplayNameFor(model => model.Lastname)
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(model => model.Lastname)
+                </dd>
+                <dt class="col-sm-2">
+                    @Html.DisplayNameFor(model => model.Middlename)
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(model => model.Middlename)
+                </dd>
+                <dt class="col-sm-2">
+                    @Html.DisplayNameFor(model => model.Course)
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(model => model.Course)
+                </dd>
+            </dl>
+        </div>
+        <div>
+            <a asp-action="Edit" asp-route-id="@Model.Id">Edit</a> |
+            <a asp-action="Index">Back to List</a>
+        </div>
+    </div>
+<input class="btnclass" onclick="javascript:onclick=printPreviewDiv('Div1')" type="button" value="Print">
